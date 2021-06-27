@@ -1,0 +1,16 @@
+{
+  "name": "callback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "Yuto Taga",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "superagent": "^6.1.0"
+  }
+}
