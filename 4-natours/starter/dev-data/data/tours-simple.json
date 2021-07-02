@@ -229,5 +229,25 @@
 		"name": "Test Tour 3",
 		"duration": 5,
 		"difficulty": "easy"
+	},
+	{
+		"id": 13,
+		"name": "Test Tour 6",
+		"duration": 5,
+		"difficulty": "easy"
+	},
+	{
+		"id": 14,
+		"name": "Test Tour 6",
+		"duration": 5,
+		"difficulty": "easy",
+		"price": 2000
+	},
+	{
+		"id": 15,
+		"name": "Test Tour 6",
+		"duration": 5,
+		"difficulty": "easy",
+		"price": 2000
 	}
 ]

@@ -4,12 +4,17 @@ const morgan = require('morgan')
 const tourRouter = require('./routes/tourRoutes')
 const userRouter = require('./routes/userRoutes')
 
-
 const app = express()
-app.use(express.json())
 
+
+console.log('app1');
 // 1 middleware
-app.use(morgan('dev'))
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'))
+}
+
+app.use(express.json())
+app.use(express.static(`${__dirname}/public`))
 
 app.use((req, res, next) => {
   console.log('Hello from the middleware🤙');
@@ -33,6 +38,8 @@ app.use((req, res, next) => {
 // app.delete('/api/v1/tours/:id', deleteTour)
 
 // 3 route
+
+console.log('app');
 
 
 app.use('/api/v1/tours', tourRouter)
@@ -64,7 +71,4 @@ app
   .delete(deleteUser) */
 
 // 4 server
-const port = 3000
-app.listen(port, () => {
-  console.log(`App running on port ${port}...`);
-})
+module.exports = app
