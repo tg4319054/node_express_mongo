@@ -29,6 +29,8 @@ console.log('Controller');
 exports.getAllTours = async (req, res) => {
   try {
     const queryObj = {...req.query}
+    const excludedFields = ['page', 'sort', 'limit', 'field']
+    excludedFields.forEach(el => delete queryObj[el])
     
     
     
@@ -36,10 +38,15 @@ exports.getAllTours = async (req, res) => {
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`)
     let query = await Tour.find(JSON.parse(queryStr))
 
+    console.log('queryStr', queryStr);
 
-    await console.log(query);
-    query = query.sort('price')
-    console.log('hoge');
+    if (req.query.sort) {
+      console.log('aaaa');
+      //query = Tour.sort('price')
+    }
+
+    // query = query.sort('price')
+    // console.log('hoge');
 
     /* if (req.query.sort) {
       console.log(req.query.sort);
