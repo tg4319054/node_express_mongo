@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const tours = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`))
 console.log('Controller');
 
+
 // router.param very useful
 // exports.checkID = (req, res, next, val) => {
 //   console.log(`Tour id is: ${val}`);
