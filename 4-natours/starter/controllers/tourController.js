@@ -7,6 +7,7 @@ console.log('Controller');
 
 
 
+
 // router.param very useful
 // exports.checkID = (req, res, next, val) => {
 //   console.log(`Tour id is: ${val}`);
